@@ -1,0 +1,16 @@
+<% @products.each do |pro| %>
+
+	<div class="col-sm-3 ">
+			<div class="col-sm-12 gallery">
+			<div>
+				<%= link_to image_tag(pro.images.first.name, class: "img-rounded imgSize") ,product_path(pro) %>
+			</div>
+			<br>
+			<center>
+				<%= link_to pro.name, product_path(pro), class: 'name-pro' %><br>
+				<%= number_to_currency(pro.price, unit: "Rp")%>
+			</center>
+			<br>
+		</div>
+	</div> 
+<% end %>

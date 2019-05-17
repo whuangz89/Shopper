@@ -1,0 +1,7 @@
+
+	<h1></h1>
+	<% if @search.found?(@search.term) || @search.term.blank?%>
+		<center><h1>No result found</h1></center>
+	<% else %>
+		<%= render @search.products %>
+	<% end %>

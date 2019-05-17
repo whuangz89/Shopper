@@ -1,0 +1,91 @@
+{
+  "v": "4.0",
+  "name": "Ruby",
+  "workspace": {
+    "defaultEnv": "ruby-rails",
+    "environments": [
+      {
+        "name": "ruby-rails",
+        "machineConfigs": [
+          {
+            "limits": {
+              "ram": 2000
+            },
+            "name": "ws-machine",
+            "type": "docker",
+            "source": {
+              "location": "http://beta.codenvy.com/api/recipe/recipe8p4iyax46b7k19kd/script",
+              "type": "dockerfile"
+            },
+            "dev": true,
+            "servers": [],
+            "envVariables": {},
+            "links": []
+          }
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "links": [],
+        "name": "console-ruby-simple",
+        "attributes": {
+          "vcs.provider.name": [
+            "git"
+          ],
+          "git.current.branch.name": [
+            "master"
+          ],
+          "contribute_to_branch": [
+            "master"
+          ],
+          "git.repository.remotes": [
+            "https://github.com/che-samples/console-ruby-simple.git"
+          ]
+        },
+        "type": "blank",
+        "source": {
+          "location": "https://github.com/che-samples/console-ruby-simple.git",
+          "type": "git",
+          "parameters": {}
+        },
+        "path": "/console-ruby-simple",
+        "problems": [],
+        "mixins": [
+          "pullrequest",
+          "git"
+        ]
+      }
+    ],
+    "name": "ruby-rails",
+    "commands": [
+      {
+        "commandLine": "cd ${current.project.path} && ruby main.rb",
+        "name": "run",
+        "attributes": {
+          "previewUrl": ""
+        },
+        "type": "custom"
+      }
+    ],
+    "links": []
+  },
+  "ide": {
+    "onProjectsLoaded": {
+      "actions": [
+        {
+          "properties": {
+            "name": "run"
+          },
+          "id": "runCommand"
+        },
+        {
+          "properties": {
+            "file": "/console-ruby-simple/main.rb"
+          },
+          "id": "openFile"
+        }
+      ]
+    }
+  }
+}

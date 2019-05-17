@@ -1,0 +1,74 @@
+<div class="text-center">
+	<% if @carts.blank? %>
+		<h1>Empty Cart</h1>	
+	<% else %>
+		<h1 class="tit">Your Cart</h1>
+			<% total = 0 %>
+			<% @carts.each do |c| %>
+				<% if c %>
+				<div class="row">
+					<div class="col-md-2">
+						<%= image_tag(c.product.images.first.name, class: 'img-cart') %>
+					</div>
+
+					<div class="col-md-2">
+						<p class="name-cart">Name: <%= c.product.name %></p>
+					</div>
+
+					<div class="col-md-2">
+						<p class="name-cart">Description: <%= c.name %></p>
+					</div>
+
+					<div class="col-md-2">
+						<p class="name-cart">Size: <%= c.size %></p>
+					</div>
+
+					<div class="col-md-2">
+						<p class="name-cart">Qty: <%= c.qty %></p>
+					</div>
+
+					<div class="col-md-2">
+						<p class="name-cart">Price: <%= number_to_currency(c.product.price, unit: "Rp") %></p>
+					</div>
+					<% total = total + (c.product.price * c.qty) %>
+				<% end %>
+				</div>
+			<% end %>
+
+
+			<p class="total-cart">Total Shopping: <%= number_to_currency(total, unit: "Rp") %>	</p>
+			<div class="txt-right">
+				<button class="btn btn-success bot" data-toggle="modal" data-target="#myModal">Transfer</button>
+			</div>
+
+
+			<div class="container">
+			  <div class="modal fade" id="myModal" role="dialog">
+			     <div class="modal-dialog">
+			     
+			       <!-- Modal content-->
+			       <div class="modal-content">
+			         <div class="view-header">
+			           <button type="button" class="xBtn glyphicon glyphicon-remove" data-dismiss="modal"></button>
+			         </div>
+			         <br>
+			         <div class="modal-head">
+			           <h3>Transaction</h3>
+			         </div>
+
+			         <div class="modal-body">
+			           Please tranfer to here
+			           thank you
+						<br>
+						<br>
+			           <%= link_to "Finished Transfer", cart_path , method: :delete, class: "btn btn-success" %>
+
+			         </div>
+
+			     </div>
+			   </div>
+			</div>
+
+
+	<% end %>
+</div>

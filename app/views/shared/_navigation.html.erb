@@ -1,0 +1,131 @@
+<div id="container">
+	   		<div id="header">
+		   		<div class="container">
+		   			<div class="row">
+					  <div class="col-sm-3">
+					  	<div class="row text-center">
+<!-- 					  	<div class="col-sm-2 pad0"> -->
+					  			<%= image_tag("facebook-letter-logo.png", :class => "logoSize") %>&nbsp &nbsp &nbsp 
+<!-- 					  		</div>
+					  		<div class="col-sm-2 pad0"> -->
+					  			<%= image_tag("twitter-logo.png", :class => "logoSize") %>&nbsp &nbsp &nbsp
+<!-- 					  		</div>
+					  		<div class="col-sm-2 pad0"> -->
+					  			<%= image_tag("instagram-logo.png", :class => "logoSize") %>&nbsp &nbsp &nbsp
+<!-- 					  		</div>
+					  		<div class="col-sm-2 pad0"> -->
+					  			<%= image_tag("rss-symbol.png", :class => "logoSize") %>
+<!-- 					  		</div>
+					  		<div class="col-sm-4"></div> -->
+					  	</div>
+					  </div>
+					  <div class="col-sm-6 text-center">Free Delivery On Jakarta</div>
+					  <div class="col-sm-3"></div> <!-- buat spacing aja -->
+					</div>	
+		   		</div>
+		   		<div class="container">
+		   		<div class="col-sm-3"></div>
+		   		<div class="col-sm-6 text-center">
+				  		<h1><%= link_to "Shopster", root_path %></h1>
+		   		</div>
+		   		<div class="col-sm-3">
+			   		<% if user_signed_in? %>
+   		       		    <div class="row">
+   		    	   			<div class="col-sm-4">
+   		    	   				<%= gravatar(current_user) %>
+   		    	   			</div>
+   		    	   			<div class="col-sm-8">
+   		    	   				<div class="row">
+   		    	   				<div class="col-sm-2"></div>
+   		    	   				<div class="col-sm-10">
+   		    	   				<center>
+   		    	   				 	<%=link_to current_user.name, account_path , class: "name-a" %>
+   		    	   				 </center>
+   		    	   				</div>
+   		    	   				</div>
+   		    	   				<div class="row">
+
+   		    	   					<div class="col-sm-2"></div>
+   		    	   				<div class="col-sm-10">
+   		    	   				<center>
+   		    	   				  <%=link_to "Sign out", destroy_user_session_path, method: :delete %>
+   		    	   				  </center>
+   		    	   				 </div>
+   		    	   				</div>
+   		    	   			</div>
+   		       			</div> 
+			   		<% else %>
+				   		<div class="row text-center">
+				   		    <%= link_to "Sign in", login_path %> / 
+				   		    <%= link_to "Sign up", register_path %>
+				   		</div>
+			   		<% end %>
+		   		</div>
+			  	</div>
+			  	<div class="container">
+			  		<div class="col-sm-3">
+			  			<div class="dropdown">
+			                    <button  class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"  >
+			                    	<span id="search_concept">Products</span> <span class="caret"></span>
+			                    </button>
+			                    <ul class="dropdown-menu">
+			                      <li><a href="#Shirt">Shirt</a></li>
+			                      <li><a href="#Pants">Pants</a></li>
+			                      <li><a href="#Jacket">Jacket</a></li>
+			                      <li><a href="#Accesoris">Accesoris</a></li>
+			                      <li class="divider"></li>
+			                      <li><a href="#all">Anything</a></li>
+			                    </ul>
+			             </div>
+					</div>
+					<div class="col-sm-6 text-center">
+						<!-- <div class="input-group text-center wew"> -->
+			                <!-- <div class="input-group-btn search-panel">
+			                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+			                    	<span id="search_concept">Products</span> <span class="caret"></span>
+			                    </button>
+			                    <ul class="dropdown-menu" role="menu">
+			                      <li><a href="#contains">Contains</a></li>
+			                      <li><a href="#its_equal">It's equal</a></li>
+			                      <li><a href="#greather_than">Greather than ></a></li>
+			                      <li><a href="#less_than">Less than < </a></li>
+			                      <li class="divider"></li>
+			                      <li><a href="#all">Anything</a></li>
+			                    </ul>
+			                </div> -->
+			                <!--
+			                <input type="hidden" name="search_param" value="all" id="search_param">         
+			                <input type="text" class="form-control" name="x" placeholder="Search term...">
+			                <span class="input-group-btn">
+			                    <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>`
+			                </span>
+			                
+							-->
+							<div class="input-container searchfield">
+			                <%= form_for(:search, url: search_path, method: :get) do |s| %>
+								<%= s.text_field :term, id: "autocomplete", value: ""  ,class: "form-control", placeholder: "Search..." %>
+								
+								<%= button_tag( class: "btn search-btn btn-default", value: "Searching...") do %>
+								  <span class="glyphicon glyphicon-search"></span>
+								<% end %>
+			                <% end %>
+
+
+			            	</div>
+			            </div>
+					<!-- </div> -->
+					<div class="col-sm-3 text-center vheight">
+<!-- 							<div class="col-sm-2 pad0"> -->
+					  			<%= link_to "", new_product_path, 
+					  			class: "glyphicon glyphicon-camera pad0" %>&nbsp &nbsp &nbsp
+<!-- 					  		</div>
+					  		<div class="col-sm-2 pad0"> -->
+					  			<span class="glyphicon glyphicon-heart pad0"></span> &nbsp &nbsp &nbsp
+<!-- 					  		</div>
+					  		<div class="col-sm-2 pad0"> -->
+					  			<%= link_to "", cart_path, class: "glyphicon glyphicon-shopping-cart pad0" %> &nbsp &nbsp &nbsp
+<!-- 					  		</div> -->
+					</div>
+			  	</div>
+	   		</div>
+	   		<hr>

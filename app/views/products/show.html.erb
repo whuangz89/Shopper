@@ -1,0 +1,67 @@
+<!-- <div class="col-sm-6 ">
+	<div class="carousel-inner">
+     	 
+    	  <!-- Left and right controls -->
+	<!-- 	  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+		    <span class="glyphicon glyphicon-chevron-left"></span>
+		    <span class="sr-only">Previous</span>
+		  </a>
+		  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+		    <span class="glyphicon glyphicon-chevron-right"></span>
+		    <span class="sr-only">Next</span>
+		  </a>
+    </div>
+</div> -->
+<div class="row">
+	<div class="col-sm-6 ">
+		<div id="myCarousel" class="carousel mc1 slide" data-ride="carousel">
+		  <!-- Wrapper for slides -->
+		  <div class="carousel-inner">
+		  	<% @product.images.each_with_index do |img,id| %>
+		     	 <% if id == 0 %>
+		     	 	<div class="item active"><%= image_tag(img.name) %></div>
+		     	 <% else %>
+		     	 	<div class="item"><%= image_tag(img.name) %></div>
+		     	 <% end %>
+		    <% end %> 
+		  </div>
+
+		  <!-- Left and right controls -->
+		  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+		    <span class="glyphicon glyphicon-chevron-left"></span>
+		    <span class="sr-only">Previous</span>
+		  </a>
+		  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+		    <span class="glyphicon glyphicon-chevron-right"></span>
+		    <span class="sr-only">Next</span>
+		  </a>
+		</div>
+	</div>
+
+	<div class="col-sm-6 ">
+		<h3>Name</h3><%= @product.name %><br>
+		<h3>Description</h3><%= @product.description %><br>
+		<h3>Price</h3><%= number_to_currency(@product.price, unit: "Rp")%><br>
+		<br><br><br>
+		<% if current_user.try(:id) != @product.user.id %>
+			<%= form_for :cart, url: {action: :add, controller: :cart, id: @product.id} do |f| %>
+				<div class="fields-cart">
+					<%= f.label :name, "Description" %>
+					<%= f.text_area :name %>
+				</div>
+
+				<div class="fields-cart">
+					<%= f.label :qty %>
+					<%= f.number_field :qty %>
+				</div>
+
+				<div class="fields-cart">
+					<%= f.label :size %>
+					<%= f.select :size, options_for_select([["S", "S"], ["M", "M"], ["L","L"], ["XL", "XL"]]) %>
+				<div>
+
+				<%= f.submit "Add to cart", class: "btn btn-primary" %>
+			<% end %>
+		<% end %>
+	</div>
+</div>

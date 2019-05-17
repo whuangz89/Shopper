@@ -1,0 +1,53 @@
+<div class="pro-pro">
+	<%= form_for @product do |p| %>
+
+		<% if @product.errors.any? %>
+			<div>
+				<strong><%= pluralize(@product.errors.count, 'errors') %> Were found :</strong>
+
+				<ul>
+					<%= @product.errors.full_messages.each do |msg| %>
+						<li><%= msg %></li>
+					<% end %>
+				</ul>
+			</div>
+		<% end %>
+
+		<div class="field">
+			<%= p.label :name %>
+			<%= p.text_field :name, class: "form-control" %>
+		</div>
+
+		<div class="field">
+			<%= p.label :description %>
+			<%= p.text_area :description, class: "form-control" %>
+		</div>
+		<br>
+		<div class="field">
+			<%= p.label :category %>
+			<%= p.select :category, options_for_select([["Shirt", "shirt"], ["Pants", "pants"], ["Jacket", "jacket"], ["Accesories", "accesories"]]), {} , {class: ""}%>
+		</div>
+
+		<div class="field">
+			<%= p.label :price %>
+			<%= p.text_field :price, class: "form-control" %>
+		</div>
+
+		<div class="row images-form">
+			<div class="col-md-12 images-form">
+				<h3>Images</h3>
+				<div id="image">
+					<%= p.fields_for :images do |img| %>
+						<%= render 'products/newImages', f: img %>
+					<% end%>
+
+					<div class="links" id="add">
+						<%= link_to_add_association "add", p, :images, partial: "images/newImages", class: 'btn btn-default add-button', limit: 3%>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<%= p.submit class: 'btn btn-default' %>
+	<% end %>
+</div>

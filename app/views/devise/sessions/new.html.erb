@@ -1,0 +1,50 @@
+<div class="container this-is-form">
+  <div class="row main">
+    <div class="panel-heading">
+             <div class="panel-title text-center">
+                <h1>Login</h1>
+              </div>
+          </div> 
+    <div class="main-login main-center">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <%= devise_error_messages! %>
+        <div class="form-group">
+          <label for="name" class="cols-sm-2 control-label"><%= f.label :email %></label>
+          <div class="cols-sm-10">
+            <div class="input-group">
+              <span class="input-group-addon glyphicon glyphicon-envelope"></span>
+                <%= f.email_field :email, autofocus: true, class: "form-control" %>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="name" class="cols-sm-2 control-label"><%= f.label :password %></label>
+          <div class="cols-sm-10">
+            <div class="input-group">
+              <span class="input-group-addon glyphicon glyphicon-lock"></span>
+                <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+            </div>
+          </div>
+        </div>
+
+        <% if devise_mapping.rememberable? -%>
+            <div class="field">
+              <%= f.check_box :remember_me %>
+              <%= f.label :remember_me %>
+            </div>
+          <% end -%>
+          <br>
+          
+        <div class="form-group ">
+          <div class="actions">
+          <center>
+              <%= f.submit "Log in", class: "btn btn-shops btn-lg"  %>
+              </center>
+            </div>
+          <% end %>
+        </div>
+         <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>

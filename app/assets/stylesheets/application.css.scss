@@ -1,0 +1,382 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+/*@import url(http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);*/
+@media screen and (max-width: 770px) {
+    .dropdown{
+      display: none;
+    }
+
+    .vheight{
+    margin-left:18px;
+    margin-top:25px;
+    }
+
+}
+
+
+a{
+  color:#e67e22;
+}
+
+a:hover{
+  color:#f6b855;
+  text-decoration: none;
+}
+
+.glyphicon-heart{
+  color:#e67e22;
+}
+
+html,
+body {
+   margin:0;
+   padding:0;
+   height:100%;
+   background-color: white;
+}
+#container {
+   background-color: 209, 209, 209;
+   min-height:100%;
+   position:relative;
+}
+#header {
+   background-color:white;
+   padding:10px;
+}
+#content {
+   padding:10px;
+   padding-bottom:60px;   /* Height of the footer */
+}
+#footer {
+  background-color:white;
+  content:'';
+   position:absolute;
+   right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    text-align: center;
+   width:100%;
+   line-height:60px;   /* Height of the footer */
+}
+hr{
+	margin: 0;
+  margin-top:10px;
+}
+.check{
+	background-color: red;
+}
+.pad0{
+	padding: 0;
+}
+#header h1{
+	color: orange;
+}
+
+
+div.img-div{
+    height:200px;
+    width:200px;
+    overflow:hidden;
+    border-radius:50%;
+}
+
+.img-div img{
+    -webkit-transform:translate(-50%);
+    margin-left:100px;
+}
+
+.circle-image{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background-image:url("http://placekitten.com/g/200/400");
+    background-size: cover;
+    display:inline-block;
+    background-position-y:25%;
+    position: relative;
+    bottom: 0;
+}
+
+.pad0{
+    font-size: 20px;
+}
+
+.logoSize{
+  width: 18px;
+  height: 18px;
+}
+.wew{
+  background-color: red;
+}
+input[type="text"]
+{
+    height:33px;
+}
+.imgSize{
+  max-width: 300px;
+  height: 300px;
+  width: 100%;
+}
+.gallery{
+  border:2px solid #D8D8D8;
+  border-radius: 20px;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.gallery img{
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+}
+
+.alert{text-align: center;}
+
+.alert-info{
+  outline: none;
+  text-align:center;
+  color: black;
+  border-color: transparent;
+  background-color: rgba(252,235,207,0.9);
+}
+
+.main{
+  margin-top:0;
+  margin: 0 auto;
+}
+
+.selectpicker{
+  padding-top: 200px;
+  margin-top:200px;
+}
+
+.images-form{
+  text-align:center;
+}
+
+.nested-fields input{
+  padding-left:50%;
+  transform: translateX(-50px);
+}
+
+.autocomplete-suggestions { border: 0.5px solid #888; background: #fff; cursor: default; overflow: auto; }
+.autocomplete-suggestion { padding: 10px 5px; font-size: 1.2em; white-space: nowrap; overflow: hidden; border: 1px solid transparent;  border-bottom-color: #999;}
+.autocomplete-selected { background: #f0f0f0; }
+.autocomplete-suggestions strong { font-weight: normal; color: #e67e22; }
+
+#searchfield { display: block; width: 100%; text-align: center; margin-bottom: 35px; }
+
+#searchfield form {
+  display: inline-block;
+  background: #eeefed;
+  padding: 0;
+  margin: 0;
+  padding: 5px;
+  border-radius: 3px;
+  margin: 5px 0 0 0;
+}
+#searchfield form .biginput {
+  width: 600px;
+  height: 40px;
+  padding: 0 10px 0 10px;
+  background-color: #fff;
+  border: 1px solid #c8c8c8;
+  border-radius: 3px;
+  color: #aeaeae;
+  font-weight:normal;
+  font-size: 1.5em;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+#searchfield form .biginput:focus {
+  color: #858585;
+}
+
+#searchfield { display: block; width: 100%; text-align: center; margin-bottom: 35px;margin:top }
+
+#searchfield form {
+  display: inline-block;
+  background: #eeefed;
+  padding: 0;
+  margin: 0;
+  padding: 5px;
+  border-radius: 3px;
+  margin: 5px 0 0 0;
+}
+#searchfield form .biginput {
+  width: 600px;
+  height: 40px;
+  padding: 0 10px 0 10px;
+  background-color: #fff;
+  border: 1px solid #c8c8c8;
+  border-radius: 3px;
+  color: #aeaeae;
+  font-weight:normal;
+  font-size: 1.5em;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+#searchfield form .biginput:focus {
+  color: #858585;
+}
+
+.search-btn{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.searchfield .form-control{
+  outline: none;
+}
+
+.searchfield .form-control:focus{
+  box-shadow:none;
+    -webkit-box-shadow: none;
+  outline: none;
+  border-color: #D8D8D8;
+}
+
+.name-pro{
+  color: black;
+}
+
+.mc1{
+  border:2px solid #D8D8D8;
+  width: 400px;
+  margin: 0 auto;
+}
+
+#myCarousel{
+  width:100%;
+}
+
+.mc1 .item{
+  height:400px;
+  width: 400px;
+}
+
+.row{
+  margin-bottom:10px;
+}
+
+.img-cart{
+  width:200px;
+  height:200px;
+}
+
+.tit{
+  margin-bottom:60px;
+}
+
+.name-cart{
+  font-size: 1.1em;
+}
+
+.total-cart{
+border:1px solid transparent;
+border-top-color:#D8D8D8;
+font-size: 1.5em;
+  margin-top:90px;
+  padding-top:15px;
+  margin-bottom:30px;
+  text-align:right;
+}
+
+
+.txt-right{
+  text-align:right
+}
+
+
+.bot{
+  margin-bottom: 50px;
+}
+
+.xBtn{
+  float: right;
+  border: none;
+  padding: 8px;
+  border-radius:100%;
+  margin-right:10px;
+  margin-top:4px;
+}
+
+.this-is-form{
+  background-color: rgba(252,242,232,0.5);
+}
+
+.main{
+  margin-top: -20px;
+  padding-bottom: 20px;
+}
+
+.main-login{
+  background-color: rgba(252,252,252,0.8);
+  border-radius: 10px;
+  margin-top:10px;
+  margin-bottom: 100px;
+}
+
+
+.btn-shops{
+  color: white;
+  background-color: rgba(244,164,37,0.8);
+}
+
+.name-a{
+  font-size:1.1em;
+}
+.hoverzoom {
+  position: relative;
+  float: left;
+  overflow: hidden;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+.hoverimg{
+  position:relative;
+  z-index: 10;
+}
+.hoverzoom .hoverimg {
+  max-width: 100%;
+  vertical-align: top;
+  -webkit-transition: all .5s ease-out;
+  transition: all .5s ease-out;
+}
+.hoverzoom:hover .hoverimg,
+.hoverzoom.hover .hoverimg {
+  -webkit-transform: scale(1.2);
+  transform: scale(1.1);
+}
+.zindexmax{
+    position:relative;
+    z-index:1;
+}
+.zindexcolor{
+  z-index:100;
+  position:relative;
+      background-color: rgba(255,255,255,0.5);
+}
+
+.pro-pro{
+  margin-bottom:200px;
+}

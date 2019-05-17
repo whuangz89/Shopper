@@ -1,0 +1,15 @@
+<div class="col-sm-3 ">
+ <div class="col-sm-12 gallery hoverzoom">
+ <div>
+  <%= link_to image_tag(product.images.first.name, class: "img-rounded imgSize hoverimg") ,product_path(product) %>
+ </div>
+ <br>
+ <center>
+ <div class="zindexcolor">
+  <%= link_to product.name, product_path(product), class: 'name-pro' %><br>
+  <%= number_to_currency(product.price, unit: "Rp")%>
+  </div>
+ </center>
+ <br>
+</div>
+</div>

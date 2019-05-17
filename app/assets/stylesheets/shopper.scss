@@ -1,0 +1,122 @@
+// Place all the styles related to the Shopper controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.carousel{
+  background-color: white;
+}
+.item,.active{
+ text-align: center;
+ margin: auto;
+}
+.inlineWimage{
+  margin-top: 40px;
+  margin-bottom: 40px;
+  background-color:rgba(252,242,232,0.5);
+}
+.top-picked-item-of-the-week{
+  background-color:rgba(252,242,232,0.5);
+  padding:20px;
+  padding-bottom:40px;
+  margin-bottom: 50px;
+}
+.wimage{
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  margin: 10px;
+  min-width: 230px;
+  max-width: 315px;
+  width: 100%;
+  font-size: 16px;
+  background-color: #fff;
+  color: #ffffff;
+  line-height: 1.2em;
+  text-align: left;
+}
+.wimage img{
+  max-width: 100%;
+  vertical-align: top;
+}
+.wimage figcaption {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.wimage h3 {
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 1px;
+  margin: 3px 0;
+  text-align: center;
+}
+
+.wimage .price {
+  margin: 8px 0;
+  font-weight: 700;
+  color: #4da3e2;
+  font-size: 1.5rem;
+}
+.circle-image {
+    border-radius: 50%;
+    min-width: 280px;
+    max-width: 350px;
+    min-height: 280px;
+    max-height: 350px;
+}
+.main{
+  margin-top: 70px;
+}
+
+h1.title {
+  font-size: 50px;
+  font-family: 'Passion One', cursive;
+  font-weight: 400;
+}
+
+.form-group{
+  margin-bottom: 15px;
+}
+
+label{
+  margin-bottom: 15px;
+}
+
+.main-login{
+  background-color: #fff;
+    /* shadows and rounded borders */
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+
+}
+
+.main-center{
+  margin-top: 30px;
+  margin: 0 auto;
+  max-width: 330px;
+    padding: 40px 40px;
+
+}
+
+.login-button{
+  margin-top: 5px;
+}
+
+.login-register{
+  font-size: 11px;
+  text-align: center;
+}
