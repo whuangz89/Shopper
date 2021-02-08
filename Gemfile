@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 gem "cocoon"
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave', '~> 1.3'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem "devise"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
